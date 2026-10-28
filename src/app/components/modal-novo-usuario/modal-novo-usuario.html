@@ -1,0 +1,21 @@
+@if (aberto) {
+  <div class="fundo">
+    <div class="modal">
+      <h2>Novo usuário</h2>
+
+      <form [formGroup]="form" (ngSubmit)="enviar()">
+        <label for="nome">Nome</label>
+        <input id="nome" type="text" formControlName="nome" />
+
+        @if (form.controls.nome.invalid && form.controls.nome.touched) {
+          <p class="erro">O nome é obrigatório.</p>
+        }
+
+        <div class="acoes">
+          <button type="button" (click)="cancelar()">Cancelar</button>
+          <button type="submit" [disabled]="form.invalid">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+}

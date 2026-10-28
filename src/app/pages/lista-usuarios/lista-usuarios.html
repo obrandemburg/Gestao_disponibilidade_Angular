@@ -1,6 +1,7 @@
 <main class="container">
   <div class="cabecalho">
     <h1>Lista de usuáriois</h1>
+    <button type="button" (click)="abrirModal()">Adicionar usuário</button>
   </div>
 
   <ul class="lista">
@@ -13,3 +14,9 @@
     }
   </ul>
 </main>
+
+<app-modal-novo-usuario
+  [aberto]="modalAberto"
+  (fechar)="fecharModal()"
+  (salvar)="adicionarUsuario($event)"
+></app-modal-novo-usuario>
