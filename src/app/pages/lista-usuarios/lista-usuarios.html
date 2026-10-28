@@ -1,1 +1,15 @@
-<h1>Lista de usuários</h1>
+<main class="container">
+  <div class="cabecalho">
+    <h1>Lista de usuáriois</h1>
+  </div>
+
+  <ul class="lista">
+    @for (usuario of usuarios$ | async; track usuario.id) {
+      <li>
+        <a [routerLink]="['/usuario', usuario.id]">{{ usuario.nome }}</a>
+      </li>
+    } @empty {
+      <li class="vazio">Nenhum usuário cadastrado.</li>
+    }
+  </ul>
+</main>

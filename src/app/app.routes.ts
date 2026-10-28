@@ -5,5 +5,5 @@ import { DisponibilidadeUsuario } from './pages/disponibilidade-usuario/disponib
 
 export const routes: Routes = [
     {path: '', component: ListaUsuarios},
-    {path: 'usuario/id', component: DisponibilidadeUsuario}
+    {path: 'usuario/:id', component: DisponibilidadeUsuario}
 ];

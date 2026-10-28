@@ -1,0 +1,39 @@
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lista {
+  list-style: none;
+  padding: 0;
+}
+
+.lista li {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.lista a {
+  display: block;
+  padding: 12px 16px;
+  color: #222;
+  text-decoration: none;
+}
+
+.lista a:hover {
+  background-color: #eef2ff;
+}
+
+.vazio {
+  padding: 12px 16px;
+  color: #777;
+}
