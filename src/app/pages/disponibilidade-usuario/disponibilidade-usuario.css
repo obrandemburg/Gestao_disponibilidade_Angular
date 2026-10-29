@@ -1,0 +1,28 @@
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  margin-bottom: 16px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.erro {
+  color: #c62828;
+  font-size: 14px;
+}
+
+.sucesso {
+  color: #2e7d32;
+}

@@ -1,1 +1,49 @@
-<p>disponibilidade-usuario works!</p>
+<main class="container">
+  <a routerLink="/">← Voltar para a equipe</a>
+
+  @if (usuario) {
+    <h1>{{ usuario.nome }}</h1>
+
+    <form [formGroup]="form" (ngSubmit)="salvar()">
+      <table>
+        <thead>
+          <tr>
+            <th>Dia</th>
+            <th>Disponível</th>
+            <th>Início</th>
+            <th>Fim</th>
+          </tr>
+        </thead>
+        <tbody formArrayName="dias">
+          @for (linha of dias.controls; track $index) {
+            <tr [formGroupName]="$index">
+              <td>{{ linha.controls.dia.value }}</td>
+              <td><input type="checkbox" formControlName="disponivel" /></td>
+              <td><input type="time" formControlName="inicio" /></td>
+              <td><input type="time" formControlName="fim" /></td>
+            </tr>
+
+            @if (linha.hasError('horarioObrigatorio')) {
+              <tr>
+                <td colspan="4" class="erro">Informe o início e o fim.</td>
+              </tr>
+            }
+            @if (linha.hasError('horarioInvalido')) {
+              <tr>
+                <td colspan="4" class="erro">O fim deve ser depois do início.</td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+
+      <button type="submit" [disabled]="form.invalid">Salvar disponibilidade</button>
+    </form>
+
+    @if (mensagem) {
+      <p class="sucesso">{{ mensagem }}</p>
+    }
+  } @else {
+    <p>Usuário não encontrado.</p>
+  }
+</main>
